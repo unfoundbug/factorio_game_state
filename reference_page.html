@@ -1,0 +1,45 @@
+<html>
+<head>
+    <meta http-equiv="refresh" content="5">
+    <style>
+        body {
+            background-color: #000000;
+        }
+        .VisibleContent{
+            color: #FFFFFF;
+            font-size: 19px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <span class="VisibleContent" id="EvolutionHeader">Evolution:</span><span class="VisibleContent" id="EvolutionValue">4%</span>
+</div>
+<div class="VisibleContent" id="AmmoVal"></div>
+
+<script>
+    obj = JSON.parse('{"evolution":{"evolution":0.00058366147566733,"evolution_factor_by_pollution ":0,"evolution_factor_by_time":0.000584,"evolution_factor_by_killing_spawners":0},"players":[{"name":"unfoundbug","slots":[{"slot":1,"name":"firearm-magazine","current":8,"max":200,"perc":4},{"slot":2,"name":"Empty","current":0,"max":0,"perc":0},{"slot":3,"name":"Empty","current":0,"max":0,"perc":0}]}]}');
+    document.getElementById("EvolutionValue").innerHTML = obj.evolution.evolution.toFixed(2) + "%";
+    ammoDest = document.getElementById("AmmoVal");
+    var ammoHtml = "<table>";
+
+    obj.players.forEach((playerRef) => {
+        ammoHtml += "<tr><td class=\"VisibleContent\">"+playerRef.name+"</td>";
+        playerRef.slots.forEach(slot => {
+            if(slot.slot!=1){
+                ammoHtml+="</tr><tr><td/>"
+            }
+            if(slot.name != "Empty"){
+                ammoHtml += "<td class=\"VisibleContent\">" + slot.name + ": (" + slot.perc.toFixed(2) + "%)</td>"
+            }else{
+                ammoHtml +="<td class=\"VisibleContent\">Empty</td>"
+            }
+        });  
+        ammoHtml += "</tr></table>"
+    });
+
+    ammoDest.innerHTML = ammoHtml;
+
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"factorio.versions": [
+			{
+				"name": "1.1.72",
+				"factorioPath": "e:\\SteamLibrary\\steamapps\\common\\Factorio\\bin\\x64\\factorio.exe"
+			},
+			{
+				"name": "Steam",
+				"factorioPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Factorio\\bin\\x64\\factorio.exe",
+				"active": true
+			}
+		],
+		"Lua.diagnostics.globals": [
+			"mods",
+			"table_size",
+			"log",
+			"localised_print",
+			"serpent",
+			"global",
+			"__DebugAdapter",
+			"__Profiler"
+		],
+		"Lua.runtime.version": "Lua 5.2",
+		"Lua.workspace.library": [
+			"e:\\SteamLibrary\\steamapps\\common\\Factorio\\data",
+			"e:\\SteamLibrary\\steamapps\\common\\Factorio\\data\\core\\lualib",
+			"c:\\Program Files (x86)\\Steam\\steamapps\\common\\Factorio\\data",
+			"c:\\Program Files (x86)\\Steam\\steamapps\\common\\Factorio\\data\\core\\lualib",
+			".vscode/factorio"
+		]
+	}
+}
